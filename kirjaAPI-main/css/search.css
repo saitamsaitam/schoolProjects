@@ -1,0 +1,97 @@
+        #results {
+            position: absolute;
+            left: 5%;
+            width: 50%;
+        }
+        
+        html {
+            background: url("../img/tausta.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+        /* Book's properties */
+        
+        .book {
+            padding: 20px;
+            float: left;
+            width: 200px;
+            height: 390px;
+            overflow: hidden;
+            width: 26%;
+        }
+        /* Book's text property */
+        
+        .book p {
+            font-size: 20px;
+            color: white;
+        }
+        
+        #prevAndNextButtons {
+            padding: 10px;
+        }
+        /* Responsive search.html */
+        
+        @media only screen and (max-width:1500px) {
+            .book {
+                width: 28%;
+            }
+        }
+        
+        @media only screen and (max-width:1300px) {
+            .book {
+                width: 32%;
+            }
+        }
+        
+        @media only screen and (max-width:1150px) {
+            .book {
+                width: 36%;
+            }
+        }
+        
+        @media only screen and (max-width:1050px) {
+            .book {
+                width: 40%;
+            }
+        }
+        
+        @media only screen and (max-width:900px) {
+            .book {
+                width: 45%;
+            }
+        }
+        
+        @media only screen and (max-width:800px) {
+            .book {
+                width: 55%;
+            }
+        }
+        
+        @media only screen and (max-width:650px) {
+            .book {
+                width: 65%;
+            }
+        }
+        
+        @media only screen and (max-width:575px) {
+            .book {
+                width: 75%;
+            }
+        }
+        
+        @media only screen and (max-width:500px) {
+            .book {
+                float: left;
+                width: 90%;
+            }
+        }
+        
+        @media only screen and (max-width:400px) {
+            .book {
+                float: none;
+                width: 100%;
+            }
+        }

@@ -1,0 +1,18 @@
+/* 
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	border-radius:  8px;
+	overflow: hidden;
+}
+
+.thead {
+	position: sticky;
+	z-index: 100;
+}
+
+.trHead {
+	background-color: rwhite;
+	border: solid;
+	border-color: black;
+} */

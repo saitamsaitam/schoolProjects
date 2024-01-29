@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: translations.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: translations.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>let defaultLocale = "en";
+let locale;
+let translations = {};
+let value;
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Käännetään sivu defaultLocale kieleen
+
+  if (localStorage.getItem("lang") === null) {
+    localStorage.setItem("lang", "en");
+    selectElement("language-picker-select", "en");
+    setLocale(defaultLocale);
+  } else {
+    let chosenLang = localStorage.getItem("lang");
+    selectElement("language-picker-select", chosenLang);
+    setLocale(chosenLang);
+  }
+});
+
+function selectElement(id, valueToSelect) {
+  let element = document.getElementById(id);
+  element.value = valueToSelect;
+}
+
+/**
+ * Changes between languages
+ *
+ */
+
+//Switch select koodi
+function changeLang(selectedValue) {
+  if (selectedValue === undefined) {
+    value = "en";
+    setLocale(value);
+  } else {
+    value = selectedValue.value;
+    localStorage.clear();
+    localStorage.setItem("lang", value);
+    setLocale(value);
+  }
+}
+
+/**
+ * Changes placeholders language
+ *
+ */
+
+//Ottaa hidden label elementit, kääntää ne ja lähettää niitten arvot
+//Uusiksi placeholdereiksi
+function changePlaceHolders() {
+  try {
+    let firstName = document.getElementById("firstName");
+    let lastName = document.getElementById("lastName");
+    let username = document.getElementById("placeholderName");
+    let password = document.getElementById("PlaceholderPass");
+    let search = document.getElementById("search");
+
+    if (firstName !== null) {
+      document.getElementsByName("firstName")[0].placeholder =
+        firstName.innerText;
+      document.getElementsByName("lastName")[0].placeholder =
+        lastName.innerText;
+      document.getElementsByName("userName")[0].placeholder =
+        username.innerText;
+      document.getElementsByName("password")[0].placeholder =
+        password.innerText;
+    } else if (username !== null) {
+      document.getElementsByName("username")[0].placeholder =
+        username.innerText;
+      document.getElementsByName("password")[0].placeholder =
+        password.innerText;
+    } else {
+      document.getElementsByName("entertainmentName")[0].placeholder =
+        search.innerText;
+    }
+  } catch (e) {}
+}
+
+// Lataa locale kielen ja laittaa sivun tähän kieleen.
+
+/**
+ * Downloads locale language and changes sites language to this
+ *
+ */
+
+async function setLocale(newLocale) {
+  if (newLocale === locale) return;
+  const newTranslations = await fetchTranslationsFor(newLocale);
+  locale = newLocale;
+  translations = newTranslations;
+  console.log(translations);
+  translatePage();
+}
+
+// Haetaan käännökset json tiedostosta
+
+/**
+ * Fetches language data from JSON file
+ *
+ */
+
+async function fetchTranslationsFor(newLocale) {
+  const response = await fetch(`../lang/${newLocale}.json`, {
+    mode: "no-cors",
+  });
+  return await response.json();
+}
+
+// Käännetään kaikki kohdat missä tämä Key on
+
+/**
+ * Translates every data what is marked with key
+ *
+ */
+
+function translatePage() {
+  document.querySelectorAll("[data-i18n-key]").forEach(translateElement);
+}
+// Vaihdetaan html elementin kieli aktiiviseen locale arvoon
+//Tämä function kutsutaan vikana
+
+function translateElement(element) {
+  const key = element.getAttribute("data-i18n-key");
+  const translation = translations[key];
+  element.innerText = translation;
+
+  changePlaceHolders();
+}
+
+module.exports = {
+  fetchTranslationsFor,
+  changeLang,
+  translatePage,
+  translateElement,
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#changeLang">changeLang</a></li><li><a href="global.html#changePlaceHolders">changePlaceHolders</a></li><li><a href="global.html#checkIfLoggedIn">checkIfLoggedIn</a></li><li><a href="global.html#connection">connection</a></li><li><a href="global.html#deleteAccFromDatabase">deleteAccFromDatabase</a></li><li><a href="global.html#deleteFromDatabase">deleteFromDatabase</a></li><li><a href="global.html#fetchTranslationsFor">fetchTranslationsFor</a></li><li><a href="global.html#generate">generate</a></li><li><a href="global.html#getFavorites">getFavorites</a></li><li><a href="global.html#getFavoritesCount">getFavoritesCount</a></li><li><a href="global.html#hideButtons">hideButtons</a></li><li><a href="global.html#loadFavorites">loadFavorites</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#logOutRequest">logOutRequest</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#printResults">printResults</a></li><li><a href="global.html#printResults2">printResults2</a></li><li><a href="global.html#putToFavorite">putToFavorite</a></li><li><a href="global.html#randomize">randomize</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#searchUrl">searchUrl</a></li><li><a href="global.html#searching">searching</a></li><li><a href="global.html#setLocale">setLocale</a></li><li><a href="global.html#showButtons">showButtons</a></li><li><a href="global.html#testFavorite">testFavorite</a></li><li><a href="global.html#testRegister">testRegister</a></li><li><a href="global.html#translatePage">translatePage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Dec 15 2022 18:20:48 GMT+0200 (Itä-Euroopan normaaliaika)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

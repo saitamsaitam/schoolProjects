@@ -1,0 +1,427 @@
+:root {
+    --background: #101119;
+    --lighterbackground: #14151d;
+    --lightestbackground: #373947;    
+    --yellow: #DEC62B;
+    --mint: #00A388;
+    --white: #EEF5FC;
+}
+
+/* 73,96% */
+
+html {background: var(--background);}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+}
+
+#home {
+    font-size: 60px;
+    color: var(--white);
+    position: absolute;
+    top: 6%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: calc(15.6px + (60 - 15.6) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.navitems {
+    margin-left: calc(7.8px + (30 - 7.8) * ((100vw - 500px) / (1920 - 500)));
+    margin-right: calc(7.8px + (30 - 7.8) * ((100vw - 500px) / (1920 - 500)));
+    color: var(--white);
+    font-weight: 400;
+    font-size: calc(6.51px + (25 - 6.51) * ((100vw - 500px) / (1920 - 500)));
+    text-decoration: underline;
+}
+
+.language-picker {
+    position: absolute;
+    top: 1%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+#language-picker-select {
+    background-color: var(--white);
+    border: none;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    color: var(--background);
+    outline: none;
+}
+
+#entertainmentId {
+    position: absolute;
+    top: 6%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-color: var(--white);
+    border-width: 2px;
+    border-style: solid;
+    font-family: "Manrope", sans-serif;
+    color: var(--background);
+    outline: none;
+    height: 24px;
+    width: 175px;
+    font-size: 17px;
+}
+
+#entertainmentId::placeholder {
+    color: #C7C7C7;
+    opacity: 1;
+}
+  
+#entertainmentId:-ms-input-placeholder {
+    color: #C7C7C7;
+}
+  
+#entertainmentId::-ms-input-placeholder {
+    color: #C7C7C7;
+}
+
+#prevAndNextButtons {
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#search-button {
+    position: absolute;
+    top: 6%;
+    left: 90.4%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    background-color: var(--background);
+    border-style: solid;
+    border-color: var(--white);
+    border-width: 2px;
+    outline: none;
+}
+
+#input-search-button {
+    display: none;
+}
+
+#search-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+}
+
+.bigtext {
+    font-size: calc(10.4px + (40 - 10.4) * ((100vw - 500px) / (1920 - 500)));
+    color: var(--white);
+    position: absolute;
+    top: 8.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.midtext {
+    font-size: calc(10.4px + (40 - 10.4) * ((100vw - 500px) / (1920 - 500)));
+    color: var(--white);
+}
+
+.midmain {
+    display: flex;
+    align-items: center;
+    margin-right: calc(105.4px + (405 - 105.4) * ((100vw - 500px) / (1920 - 500)));
+    gap: calc(31.2px + (120 - 31.2) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.question_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(2.6px + (10 - 2.6) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.selection {
+    color: var(--white);
+    font-weight: 400;
+    font-size: calc(15.6px + (60 - 15.6) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.midroulette {
+    display: flex;
+    align-items: center;
+    margin-right: calc(108.3px + (416 - 108.3) * ((100vw - 500px) / (1920 - 500)));
+    gap: calc(31.2px + (120 - 31.2) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.midquestions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: calc(5.2px + (20 - 5.2) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.imageplaceholder {
+    position: relative;
+    background-color: var(--lighterbackground);
+    height: calc(123.42px + (474 - 123.42) * ((100vw - 500px) / (1920 - 500)));
+    aspect-ratio: 0.67/1;
+}
+
+#title {
+    font-size: 30px;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    color: var(--white);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#favorite_roulette {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.cover {
+    height: calc(131.5px + (505 - 131.5) * ((100vw - 500px) / (1920 - 500)));
+    width: 100%;
+    aspect-ratio: 2/4;
+    border: calc(3.9px + (15 - 3.9) * ((100vw - 500px) / (1920 - 500)));
+    border-style: solid;
+    border-color: var(--background);
+    margin-bottom: -25px;
+}
+
+#cover {
+    width: 100%;
+    aspect-ratio: 0.67/1;
+    border-color: var(--background);
+}
+
+#results, #favResults {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    left: 46.9%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    width: 82.5vw;
+    max-width: 82.5vw;
+    height: 75vh;
+    max-height: 75vh;
+    margin-top: 45px;    
+}
+
+#results {
+    top: 49%;
+}
+
+#favResults {
+    top: 50%;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    display: inline-block;
+    border: none;
+    background-color: var(--background);
+    margin: 5.5px;
+    overflow: hidden;
+}
+
+#roulette label {
+    font-size: calc(10.4px + (40 - 10.4) * ((100vw - 500px) / (1920 - 500)));
+    width: calc(41.6px + (160 - 41.6) * ((100vw - 500px) / (1920 - 500)));
+    height: calc(20.8px + (80 - 20.8) * ((100vw - 500px) / (1920 - 500)));
+    cursor: pointer;
+}
+
+#question_button label {
+    font-size: calc(10.4px + (40 - 10.4) * ((100vw - 500px) / (1920 - 500)));
+    width: calc(41.6px + (160 - 41.6) * ((100vw - 500px) / (1920 - 500)));
+    height: calc(20.8px + (80 - 20.8) * ((100vw - 500px) / (1920 - 500)));
+    cursor: pointer;
+}
+  
+.button label span {
+    text-align: center;
+    border: 2px solid var(--white);
+    padding: calc(1.95px + (7.5 - 1.95) * ((100vw - 500px) / (1920 - 500))) calc(3.49px + (13.4 - 3.49) * ((100vw - 500px) / (1920 - 500)));
+    display: block;
+    user-select: none;
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-shadow: -1px 1px 0 var(--background), 1px 1px 0 var(--background), 1px -1px 0 var(--background), -1px -1px 0 var(--background);
+}
+  
+.button label input {
+    position: absolute;
+    display: none;
+    color: var(--white) !important;
+}
+
+.button label input + span {
+    color: var(--white);
+}
+
+#favorite, .previousButton, .nextButton, .deleteFavorite, #favorite_roulette {
+    font-family: "Manrope", sans-serif;
+    background-color: var(--background);
+    border-color: var(--white);
+    color: var(--white);
+    margin-top: calc(2.6px + (10 - 2.6) * ((100vw - 500px) / (1920 - 500)));
+    border-style: solid;
+    border-width: 1px;
+}
+
+#favorite:hover, .previousButton:hover, .nextButton:hover, .deleteFavorite:hover, #favorite_roulette:hover, label span:hover {
+    background-color: var(--lightestbackground);
+}
+
+#favorite, .deleteFavorite {
+    position: relative;
+    transform: translate(50%, -150%);
+}
+
+#favorite {
+    left: 54.2%;
+}
+
+.deleteFavorite {
+    left: -72.9%;
+    cursor: pointer;
+}
+
+#favorite:hover, .previousButton:hover, .nextButton:hover {
+    background-color: var(--footer);
+    cursor: pointer;
+}
+
+#roulette input:checked + span {
+    background-color: var(--mint);
+}
+
+#question_button input:checked + span {
+    background-color: var(--yellow);
+}
+
+.search {
+    display: inline-block;
+    position: absolute;
+    top: 87.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background);
+    font-family: "Manrope", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 100;
+    overflow: hidden;
+    border: none;
+}
+
+.search label {
+    font-size: calc(10.4px + (40 - 10.4) * ((100vw - 500px) / (1920 - 500)));
+    width: calc(41.6px + (160 - 41.6) * ((100vw - 500px) / (1920 - 500)));
+    height: calc(20.8px + (80 - 20.8) * ((100vw - 500px) / (1920 - 500)));
+    cursor: pointer;
+}
+  
+.search label span {
+    text-align: center;
+    text-decoration: none;
+    padding: calc(1.95px + (7.5 - 1.95) * ((100vw - 500px) / (1920 - 500))) calc(3.49px + (13.4 - 3.49) * ((100vw - 500px) / (1920 - 500)));
+    border: 2px solid var(--white);
+    color: var(--white);
+    display: block;
+    user-select: none;
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-shadow: -1px 1px 0 var(--background), 1px 1px 0 var(--background), 1px -1px 0 var(--background), -1px -1px 0 var(--background);
+}
+
+#roulette_search label span:active {
+    background: var(--mint);
+}
+
+#questions_search label span:active {
+    background: var(--yellow);
+}
+
+#left:link, #left:visited, #left:active {text-decoration: none;}
+#right:link, #right:visited, #right:active {text-decoration: none;}
+
+#left:hover {color: var(--yellow);}
+#right:hover {color: var(--mint);}
+
+.separator {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--white);
+}
+
+#main_separator {
+    height: calc(78.1px + (300 - 78.1) * ((100vw - 500px) / (1920 - 500)));
+}
+
+#roulette_separator {
+    height: calc(143.22px + (550 - 143.22) * ((100vw - 500px) / (1920 - 500)));
+}
+
+footer {
+    position: absolute;
+    top: 97.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footertext {
+    text-align: center;
+    color: var(--lightestbackground);
+    font-size: calc(3.9px + (15 - 3.9) * ((100vw - 500px) / (1920 - 500)));
+}

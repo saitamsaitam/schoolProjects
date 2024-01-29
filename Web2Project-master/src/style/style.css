@@ -1,0 +1,15 @@
+.show {
+    position: absolute;
+    margin-left: 40%;
+    transition: 500ms;
+    opacity: 1;
+    background-color: white;
+}
+
+.show.active {
+    opacity: 0;
+}
+
+.hide {
+    display: none;
+}

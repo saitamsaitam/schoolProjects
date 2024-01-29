@@ -1,0 +1,2 @@
+# schoolProjects
+Koulussa tehtyjä projekteja
